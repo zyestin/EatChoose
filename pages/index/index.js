@@ -1,24 +1,29 @@
-// index.ts
-interface IPageData {
-  restaurantSets: IRestaurantSet[];
-}
-
-Page<IPageData>({
+// pages/index/index.js
+Page({
+  /**
+   * 页面的初始数据
+   */
   data: {
     restaurantSets: []
   },
 
-  onLoad() {
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad(options) {
     this.loadRestaurantSets();
   },
 
+  /**
+   * 生命周期函数--监听页面显示
+   */
   onShow() {
     this.loadRestaurantSets();
   },
 
   // 加载饭店集列表
   loadRestaurantSets() {
-    const app = getApp<IAppOption>();
+    const app = getApp();
     const sets = app.getAllRestaurantSets();
     this.setData({
       restaurantSets: sets
@@ -33,7 +38,7 @@ Page<IPageData>({
   },
 
   // 点击饭店集
-  onSetTap(e: any) {
+  onSetTap(e) {
     const { id } = e.currentTarget.dataset;
     wx.navigateTo({
       url: `/pages/detail/detail?id=${id}`
@@ -41,14 +46,14 @@ Page<IPageData>({
   },
 
   // 删除饭店集
-  onDeleteTap(e: any) {
+  onDeleteTap(e) {
     const { id } = e.currentTarget.dataset;
     wx.showModal({
       title: '确认删除',
       content: '确定要删除这个饭店集吗？',
       success: (res) => {
         if (res.confirm) {
-          const app = getApp<IAppOption>();
+          const app = getApp();
           app.deleteRestaurantSet(id);
           this.loadRestaurantSets();
           wx.showToast({
@@ -59,4 +64,4 @@ Page<IPageData>({
       }
     });
   }
-});
+})
