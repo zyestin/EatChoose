@@ -100,8 +100,26 @@ Page({
    * 保存饭店集
    */
   onSave() {
-    const { setName, restaurants, canSave, isEdit, setId } = this.data;
+    let { setName, restaurants, canSave, isEdit, setId, newRestaurant } = this.data;
     if (!canSave) return;
+
+    // 如果 newRestaurant 有值，先去重判断
+    if (newRestaurant) {
+      const exists = restaurants.some(r => r.name === newRestaurant);
+      if (exists) {
+        wx.showToast({
+          title: '该饭店已存在',
+          icon: 'none'
+        });
+        return;
+      } else {
+        // 自动添加 newRestaurant
+        restaurants = [...restaurants, {
+          id: util.generateUUID(),
+          name: newRestaurant
+        }];
+      }
+    }
 
     const app = getApp();
     const set = {

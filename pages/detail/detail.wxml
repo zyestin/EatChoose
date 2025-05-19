@@ -1,7 +1,10 @@
 <view class="container">
   <!-- 饭店集信息 -->
   <view class="set-info card">
-    <view class="set-name">{{restaurantSet.name}}</view>
+    <view class="set-header">
+      <view class="set-name">{{restaurantSet.name}}</view>
+      <view class="edit-btn" bindtap="onEdit">编辑</view>
+    </view>
     <view class="set-meta">共 {{restaurantSet.restaurants.length}} 家饭店</view>
   </view>
 

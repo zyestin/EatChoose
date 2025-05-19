@@ -7,10 +7,24 @@
   margin-bottom: 30rpx;
 }
 
+.set-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
 .set-name {
   font-size: 36rpx;
   font-weight: bold;
-  margin-bottom: 10rpx;
+}
+
+.edit-btn {
+  font-size: 28rpx;
+  color: #007AFF;
+  padding: 6rpx 20rpx;
+  border-radius: 30rpx;
+  background-color: rgba(0, 122, 255, 0.1);
 }
 
 .set-meta {
@@ -71,4 +85,22 @@
 
 .restaurant-item:last-child {
   border-bottom: none;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+  margin: 0 24rpx 30rpx;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #FF9500;
+  color: #fff;
+  font-size: 32rpx;
+  padding: 20rpx 40rpx;
+  border-radius: 40rpx;
+  text-align: center;
 }

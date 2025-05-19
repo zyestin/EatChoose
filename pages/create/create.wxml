@@ -33,7 +33,7 @@
              bindinput="onRestaurantInput" />
       <view class="add-btn {{!newRestaurant ? 'btn-disabled' : ''}}" 
             bindtap="onAddRestaurant">
-        添加
+        下一个
       </view>
     </view>
   </view>

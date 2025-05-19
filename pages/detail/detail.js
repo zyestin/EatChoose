@@ -6,7 +6,8 @@ Page({
   data: {
     restaurantSet: undefined,
     selectedRestaurant: undefined,
-    loading: true
+    loading: true,
+    setId: '' // 存储饭店集ID，用于刷新数据
   },
 
   /**
@@ -24,8 +25,31 @@ Page({
       return;
     }
 
+    // 保存ID用于后续刷新
+    this.setData({
+      setId: options.id
+    });
+    
+    this.loadRestaurantSet(options.id);
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   * 每次页面显示时重新加载数据，确保数据是最新的
+   */
+  onShow() {
+    // 如果有setId，重新加载数据
+    if (this.data.setId) {
+      this.loadRestaurantSet(this.data.setId);
+    }
+  },
+
+  /**
+   * 加载饭店集数据
+   */
+  loadRestaurantSet(id) {
     const app = getApp();
-    const set = app.getRestaurantSet(options.id);
+    const set = app.getRestaurantSet(id);
     
     if (!set) {
       wx.showToast({
@@ -45,8 +69,25 @@ Page({
       });
     }
 
+    // 保持已选择的饭店（如果有）
+    const currentSelected = this.data.selectedRestaurant;
+    let newSelected = undefined;
+    
+    // 如果之前有选择的饭店，尝试在新数据中找到它
+    if (currentSelected) {
+      newSelected = set.restaurants.find(r => r.id === currentSelected.id);
+      // 如果找不到（可能被删除了），则清除选择
+      if (!newSelected) {
+        wx.showToast({
+          title: '所选饭店已被移除',
+          icon: 'none'
+        });
+      }
+    }
+
     this.setData({
       restaurantSet: set,
+      selectedRestaurant: newSelected,
       loading: false
     });
   },
