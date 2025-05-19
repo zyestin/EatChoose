@@ -1,0 +1,62 @@
+/* pages/index/index.wxss */
+.container {
+  padding-top: 30rpx;
+}
+
+.create-btn {
+  margin: 20rpx 0 40rpx;
+}
+
+.restaurant-sets {
+  width: 100%;
+}
+
+.restaurant-set {
+  margin-bottom: 30rpx;
+}
+
+.set-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.set-name {
+  font-size: 34rpx;
+  font-weight: bold;
+}
+
+.set-count {
+  font-size: 28rpx;
+  color: #666;
+  background-color: #f5f5f5;
+  padding: 6rpx 16rpx;
+  border-radius: 20rpx;
+}
+
+.set-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.delete-btn {
+  color: #FF5252;
+  padding: 10rpx;
+}
+
+.empty-state {
+  margin-top: 200rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty-tip {
+  color: #999;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}

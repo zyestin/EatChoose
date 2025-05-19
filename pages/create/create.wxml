@@ -1,0 +1,48 @@
+<view class="container">
+  <!-- 饭店集名称 -->
+  <view class="section">
+    <view class="section-title">饭店集名称</view>
+    <input class="input set-name-input" 
+           placeholder="请输入饭店集名称" 
+           value="{{setName}}" 
+           bindinput="onSetNameInput" />
+  </view>
+
+  <!-- 饭店列表 -->
+  <view class="section">
+    <view class="section-title">饭店列表</view>
+    
+    <!-- 已添加的饭店 -->
+    <view class="restaurants-list" wx:if="{{restaurants.length > 0}}">
+      <view class="restaurant-item" wx:for="{{restaurants}}" wx:key="id">
+        <view class="restaurant-name">{{item.name}}</view>
+        <view class="delete-btn" bindtap="onDeleteRestaurant" data-index="{{index}}">删除</view>
+      </view>
+    </view>
+    
+    <!-- 空状态 -->
+    <view class="empty-tip" wx:else>
+      还没有添加饭店，请在下方添加
+    </view>
+
+    <!-- 添加饭店 -->
+    <view class="add-restaurant">
+      <input class="input restaurant-input" 
+             placeholder="请输入饭店名称" 
+             value="{{newRestaurant}}" 
+             bindinput="onRestaurantInput" />
+      <view class="add-btn {{!newRestaurant ? 'btn-disabled' : ''}}" 
+            bindtap="onAddRestaurant">
+        添加
+      </view>
+    </view>
+  </view>
+
+  <!-- 保存按钮 -->
+  <view class="save-section">
+    <view class="btn {{!canSave ? 'btn-disabled' : ''}}" 
+          bindtap="onSave">
+      保存
+    </view>
+  </view>
+</view>

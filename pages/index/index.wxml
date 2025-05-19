@@ -1,0 +1,32 @@
+<view class="container">
+  <!-- 创建按钮 -->
+  <view class="create-btn" bindtap="onCreateTap">
+    <view class="btn">创建新的饭店集</view>
+  </view>
+
+  <!-- 饭店集列表 -->
+  <view class="restaurant-sets" wx:if="{{restaurantSets.length > 0}}">
+    <view class="card restaurant-set" 
+          wx:for="{{restaurantSets}}" 
+          wx:key="id" 
+          bindtap="onSetTap" 
+          data-id="{{item.id}}">
+      <view class="set-header">
+        <view class="set-name">{{item.name}}</view>
+        <view class="set-count">{{item.restaurants.length}}家店</view>
+      </view>
+      <view class="set-footer">
+        <view class="set-time">{{item.updateTimeStr}}</view>
+        <view class="delete-btn" catchtap="onDeleteTap" data-id="{{item.id}}">
+          删除
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:else>
+    <view class="empty-tip">还没有创建饭店集</view>
+    <view class="empty-tip">点击上方按钮创建一个吧～</view>
+  </view>
+</view>

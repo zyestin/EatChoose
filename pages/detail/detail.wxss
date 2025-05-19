@@ -1,0 +1,74 @@
+/* pages/detail/detail.wxss */
+.container {
+  padding-top: 30rpx;
+}
+
+.set-info {
+  margin-bottom: 30rpx;
+}
+
+.set-name {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.set-meta {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.result-section {
+  text-align: center;
+  padding: 40rpx 24rpx;
+  margin-bottom: 30rpx;
+}
+
+.result-title {
+  font-size: 32rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+}
+
+.result-name {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #FF9500;
+  margin-bottom: 40rpx;
+}
+
+.result-actions {
+  margin-top: 20rpx;
+}
+
+.random-section {
+  margin-bottom: 30rpx;
+}
+
+.restaurants-section {
+  margin-bottom: 30rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.restaurants-list {
+  max-height: 600rpx;
+  overflow-y: auto;
+}
+
+.restaurant-item {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.restaurant-name {
+  font-size: 30rpx;
+}
+
+.restaurant-item:last-child {
+  border-bottom: none;
+}

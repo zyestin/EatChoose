@@ -1,0 +1,31 @@
+<view class="container">
+  <!-- 饭店集信息 -->
+  <view class="set-info card">
+    <view class="set-name">{{restaurantSet.name}}</view>
+    <view class="set-meta">共 {{restaurantSet.restaurants.length}} 家饭店</view>
+  </view>
+
+  <!-- 随机选择结果 -->
+  <view class="result-section card" wx:if="{{selectedRestaurant}}">
+    <view class="result-title">今天吃这家！</view>
+    <view class="result-name">{{selectedRestaurant.name}}</view>
+    <view class="result-actions">
+      <view class="btn" bindtap="onRandomAgain">换一家</view>
+    </view>
+  </view>
+
+  <!-- 随机选择按钮 -->
+  <view class="random-section" wx:else>
+    <view class="btn" bindtap="onRandomSelect">随机选择</view>
+  </view>
+
+  <!-- 饭店列表 -->
+  <view class="restaurants-section card">
+    <view class="section-title">饭店列表</view>
+    <view class="restaurants-list">
+      <view class="restaurant-item" wx:for="{{restaurantSet.restaurants}}" wx:key="id">
+        <view class="restaurant-name">{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+</view>
