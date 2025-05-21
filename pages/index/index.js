@@ -28,6 +28,11 @@ Page({
       app.waitForDataLoaded().then(() => {
         wx.hideLoading();
         this.loadRestaurantSets();
+      }).catch(err => {
+        console.error('等待数据加载失败:', err);
+        wx.hideLoading();
+        // 即使出错，也尝试加载可能存在的数据
+        this.loadRestaurantSets();
       });
     }
   },
@@ -53,9 +58,27 @@ Page({
   /**
    * 下拉刷新
    */
-  onPullDownRefresh() {
-    this.loadRestaurantSets();
-    wx.stopPullDownRefresh();
+  async onPullDownRefresh() {
+    try {
+      const app = getApp();
+      // 从云端刷新数据
+      await app.refreshFromCloud();
+      // 重新加载列表
+      this.loadRestaurantSets();
+      wx.showToast({
+        title: '刷新成功',
+        icon: 'success'
+      });
+    } catch (e) {
+      console.error('刷新失败：', e);
+      wx.showToast({
+        title: '刷新失败',
+        icon: 'none'
+      });
+    } finally {
+      // 停止下拉刷新动画
+      wx.stopPullDownRefresh();
+    }
   },
 
   // 加载饭店集列表

@@ -235,6 +235,44 @@ App({
     }
   },
 
+  // 从云端刷新数据
+  async refreshFromCloud() {
+    if (!this.globalData.openid) {
+      throw new Error('openid not available');
+    }
+
+    try {
+      console.log('正在从云端刷新数据...');
+      const db = wx.cloud.database();
+      const { data } = await db.collection('restaurantSets')
+        .where({
+          _openid: this.globalData.openid
+        })
+        .get();
+      
+      console.log('云端数据查询结果：', data);
+      
+      if (data && data.length > 0) {
+        // 使用云端数据
+        this.globalData.restaurantSets = data.map(item => ({
+          id: item._id,
+          name: item.name,
+          restaurants: item.restaurants || []
+        }));
+        // 同步到本地存储
+        wx.setStorageSync('restaurantSets', this.globalData.restaurantSets);
+        console.log('已刷新云端数据，共', data.length, '个饭店集');
+      } else {
+        console.log('云端没有数据');
+      }
+      
+      return true;
+    } catch (e) {
+      console.error('从云端刷新数据失败：', e);
+      throw e;
+    }
+  },
+
   // 保存数据（同时保存到本地和云端）
   async saveRestaurantSets() {
     // 保存到本地
@@ -314,9 +352,9 @@ App({
   },
 
   // 等待数据加载完成
-  async waitForDataLoaded() {
+  waitForDataLoaded() {
     if (this.globalData.isDataLoaded) {
-      return;
+      return Promise.resolve();
     }
 
     return new Promise((resolve) => {
