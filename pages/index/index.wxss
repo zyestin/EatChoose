@@ -1,62 +1,78 @@
 /* pages/index/index.wxss */
 .container {
-  padding-top: 30rpx;
+  padding: 30rpx;
 }
 
+/* 加载状态 */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400rpx;
+}
+
+.loading {
+  color: #999;
+  font-size: 28rpx;
+}
+
+/* 创建按钮 */
 .create-btn {
-  margin: 20rpx 0 40rpx;
-}
-
-.restaurant-sets {
-  width: 100%;
-}
-
-.restaurant-set {
   margin-bottom: 30rpx;
 }
 
-.set-header {
+.btn {
+  background-color: #FF9500;
+  color: #fff;
+  font-size: 32rpx;
+  padding: 20rpx 0;
+  border-radius: 40rpx;
+  text-align: center;
+}
+
+/* 空状态提示 */
+.empty-tip {
+  text-align: center;
+  color: #999;
+  font-size: 28rpx;
+  margin-top: 100rpx;
+}
+
+/* 饭店集列表 */
+.sets-container {
+  margin-top: 20rpx;
+}
+
+.set-item {
+  background-color: #fff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 20rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+
+.set-info {
+  flex: 1;
 }
 
 .set-name {
-  font-size: 34rpx;
+  font-size: 32rpx;
   font-weight: bold;
+  margin-bottom: 8rpx;
 }
 
-.set-count {
-  font-size: 28rpx;
-  color: #666;
-  background-color: #f5f5f5;
-  padding: 6rpx 16rpx;
-  border-radius: 20rpx;
-}
-
-.set-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.set-meta {
   font-size: 24rpx;
-  color: #999;
+  color: #666;
 }
 
 .delete-btn {
-  color: #FF5252;
-  padding: 10rpx;
-}
-
-.empty-state {
-  margin-top: 200rpx;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.empty-tip {
-  color: #999;
+  color: #FF3B30;
   font-size: 28rpx;
-  margin-bottom: 20rpx;
+  padding: 10rpx 20rpx;
+  border-radius: 30rpx;
+  background-color: rgba(255, 59, 48, 0.1);
 }

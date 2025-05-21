@@ -54,5 +54,6 @@
   "appid": "wxacc59fd135f79f0d",
   "condition": {},
   "simulatorPluginLibVersion": {},
-  "editorSetting": {}
+  "editorSetting": {},
+  "cloudfunctionRoot": "cloudfunctions/"
 }
