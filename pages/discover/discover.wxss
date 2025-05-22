@@ -1,0 +1,63 @@
+/* pages/discover/discover.wxss */
+.container {
+  padding: 30rpx;
+}
+
+/* 加载状态 */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400rpx;
+}
+
+.loading {
+  color: #999;
+  font-size: 28rpx;
+}
+
+/* 空状态提示 */
+.empty-tip {
+  text-align: center;
+  color: #999;
+  font-size: 28rpx;
+  margin-top: 100rpx;
+}
+
+/* 饭店集列表 */
+.sets-container {
+  margin-top: 20rpx;
+}
+
+.set-item {
+  background-color: #fff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+
+.set-info {
+  margin-bottom: 16rpx;
+}
+
+.set-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 8rpx;
+}
+
+.set-meta {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.user-info {
+  border-top: 1rpx solid #f0f0f0;
+  padding-top: 16rpx;
+}
+
+.shared-by {
+  font-size: 24rpx;
+  color: #888;
+}

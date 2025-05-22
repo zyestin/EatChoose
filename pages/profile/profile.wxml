@@ -1,0 +1,24 @@
+<view class="container">
+  <!-- 加载状态 -->
+  <view class="loading-container" wx:if="{{loading}}">
+    <view class="loading">加载中...</view>
+  </view>
+
+  <!-- 内容区域 -->
+  <block wx:else>
+    <!-- 饭店集列表 -->
+    <view class="sets-container">
+      <view class="empty-tip" wx:if="{{restaurantSets.length === 0}}">
+        还没有饭店集，快去创建吧！
+      </view>
+      <view class="set-item" wx:for="{{restaurantSets}}" wx:key="id" bindtap="onSetTap" data-id="{{item.id}}">
+        <view class="set-info">
+          <view class="set-name">{{item.name}}</view>
+          <view class="set-meta">共 {{item.restaurants.length}} 家饭店</view>
+          <view class="set-author">分享者: {{item.publisherInfo.nickName || '我自己'}}</view>
+        </view>
+        <view class="delete-btn" catchtap="onDeleteTap" data-id="{{item.id}}">删除</view>
+      </view>
+    </view>
+  </block>
+</view>

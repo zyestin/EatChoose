@@ -1,0 +1,23 @@
+<view class="container">
+  <!-- 加载状态 -->
+  <view class="loading-container" wx:if="{{loading}}">
+    <view class="loading">加载中...</view>
+  </view>
+
+  <!-- 内容区域 -->
+  <block wx:else>
+    <!-- 饭店集列表 -->
+    <view class="sets-container">
+      <view class="empty-tip" wx:if="{{sharedSets.length === 0}}">
+        还没有人分享饭店集
+      </view>
+      <view class="set-item" wx:for="{{sharedSets}}" wx:key="id" bindtap="onSetTap" data-id="{{item._id}}">
+        <view class="set-info">
+          <view class="set-name">{{item.name}}</view>
+          <view class="set-meta">共 {{item.restaurants.length}} 家饭店</view>
+          <view class="set-author">分享者: {{item.nickName || '匿名'}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

@@ -1,4 +1,5 @@
 {
   "navigationBarTitleText": "饭店集详情",
+  "enablePullDownRefresh": false,
   "usingComponents": {}
 }
