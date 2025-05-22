@@ -135,6 +135,7 @@ App({
         this.globalData.restaurantSets = data.map((item) => ({
           id: item._id,
           name: item.name,
+          isPublic: item.isPublic,
           restaurants: item.restaurants || [],
         }));
         // 同步到本地存储
@@ -318,6 +319,7 @@ App({
         this.globalData.restaurantSets = data.map((item) => ({
           id: item._id,
           name: item.name,
+          isPublic: item.isPublic,
           restaurants: item.restaurants || [],
         }));
         // 同步到本地存储

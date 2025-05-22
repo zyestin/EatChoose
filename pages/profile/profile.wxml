@@ -15,7 +15,7 @@
         <view class="set-info">
           <view class="set-name">{{item.name}}</view>
           <view class="set-meta">共 {{item.restaurants.length}} 家饭店</view>
-          <view class="set-author">分享者: {{item.publisherInfo.nickName || '我自己'}}</view>
+          <view wx:if="{{item.isPublic}}" class="set-public">已公开</view>
         </view>
         <view class="delete-btn" catchtap="onDeleteTap" data-id="{{item.id}}">删除</view>
       </view>

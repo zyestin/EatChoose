@@ -38,7 +38,6 @@
 }
 
 .set-info {
-  margin-bottom: 16rpx;
 }
 
 .set-name {
@@ -50,11 +49,6 @@
 .set-meta {
   font-size: 24rpx;
   color: #666;
-}
-
-.user-info {
-  border-top: 1rpx solid #f0f0f0;
-  padding-top: 16rpx;
 }
 
 .shared-by {

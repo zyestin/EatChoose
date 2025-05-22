@@ -104,3 +104,23 @@
   border-radius: 40rpx;
   text-align: center;
 }
+
+.public-tag {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 2px 12px;
+  font-size: 24rpx;
+  border-radius: 12rpx;
+  font-weight: bold;
+}
+
+.public-tag--disabled {
+  background: #f0f0f0;
+  color: #999;
+}
+
+.public-tag--active {
+  background: #07C160;
+  color: #fff;
+  cursor: pointer;
+}

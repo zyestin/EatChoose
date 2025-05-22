@@ -15,7 +15,7 @@
         <view class="set-info">
           <view class="set-name">{{item.name}}</view>
           <view class="set-meta">共 {{item.restaurants.length}} 家饭店</view>
-          <view class="set-author">分享者: {{item.nickName || '匿名'}}</view>
+          <view class="shared-by">分享者: {{item.nickName || '匿名'}}</view>
         </view>
       </view>
     </view>

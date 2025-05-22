@@ -12,7 +12,8 @@
         <view class="set-name">{{restaurantSet.name}}</view>
         <view class="action-btns">
           <view class="edit-btn" bindtap="onEdit">编辑</view>
-          <view class="publish-btn" bindtap="onPublish">公开</view>
+          <view wx:if="{{restaurantSet.isPublic}}" class="public-tag public-tag--disabled">已公开</view>
+          <view wx:else class="public-tag public-tag--active" bindtap="onPublish">公开</view>
         </view>
       </view>
       <view class="set-meta">共 {{restaurantSet.restaurants.length}} 家饭店</view>
