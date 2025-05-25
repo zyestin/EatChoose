@@ -119,5 +119,12 @@ Page({
       });
       console.error('保存失败:', error);
     }
+  },
+
+  onShow() {
+    // 如果是通过tabBar进入，则自动跳转到创建流程页
+    if (getCurrentPages().length === 1) {
+      wx.navigateTo({ url: '/pages/create/create' });
+    }
   }
 })

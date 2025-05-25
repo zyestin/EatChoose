@@ -1,0 +1,15 @@
+<view class="tabbar">
+  <view class="tab-item" bindtap="switchTab" data-path="/pages/profile/profile">
+    <image src="/images/profile.png" mode="aspectFit" class="tab-icon" wx:if="{{selected!==0}}"/>
+    <image src="/images/profile_selected.png" mode="aspectFit" class="tab-icon" wx:if="{{selected===0}}"/>
+    <text class="tab-text {{selected===0?'active':''}}">我的</text>
+  </view>
+  <view class="plus-btn" bindtap="onPlus">
+    <image src="/images/create.png" class="plus-icon"/>
+  </view>
+  <view class="tab-item" bindtap="switchTab" data-path="/pages/discover/discover">
+    <image src="/images/discover.png" mode="aspectFit" class="tab-icon" wx:if="{{selected!==1}}"/>
+    <image src="/images/discover_selected.png" mode="aspectFit" class="tab-icon" wx:if="{{selected===1}}"/>
+    <text class="tab-text {{selected===1?'active':''}}">发现</text>
+  </view>
+</view>

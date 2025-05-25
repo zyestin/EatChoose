@@ -12,28 +12,23 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "custom": true,
     "color": "#999999",
     "selectedColor": "#FF9500",
     "backgroundColor": "#ffffff",
     "borderStyle": "black",
     "list": [
       {
-        "pagePath": "pages/discover/discover",
-        "text": "发现",
-        "iconPath": "images/discover.png",
-        "selectedIconPath": "images/discover_selected.png"
-      },
-      {
-        "pagePath": "pages/create/create",
-        "text": "",
-        "iconPath": "images/create.png",
-        "selectedIconPath": "images/create.png"
-      },
-      {
         "pagePath": "pages/profile/profile",
         "text": "我的",
         "iconPath": "images/profile.png",
         "selectedIconPath": "images/profile_selected.png"
+      },
+      {
+        "pagePath": "pages/discover/discover",
+        "text": "发现",
+        "iconPath": "images/discover.png",
+        "selectedIconPath": "images/discover_selected.png"
       }
     ]
   },

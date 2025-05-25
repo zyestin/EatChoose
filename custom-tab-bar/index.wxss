@@ -1,0 +1,47 @@
+.tabbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 -1rpx 10rpx rgba(0,0,0,0.05);
+  z-index: 999;
+}
+.tab-item {
+  flex: 1;
+  text-align: center;
+  padding: 0 10rpx;
+}
+.tab-icon {
+  width: 48rpx;
+  height: 48rpx;
+  display: block;
+  margin: 0 auto 4rpx;
+}
+.tab-text {
+  font-size: 24rpx;
+  color: #999;
+}
+.tab-text.active {
+  color: #FF9500;
+}
+.plus-btn {
+  width: 90rpx;
+  height: 90rpx;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -30rpx;
+  z-index: 1000;
+}
+.plus-icon {
+  width: 60rpx;
+  height: 60rpx;
+}
